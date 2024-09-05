@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "tomi-datafactory"
+		},
+		"tomi_datapoolsyn_link_DF_connectionString": {
+			"value": ""
+		},
+		"tomidatalake_link_DF_accountKey": {
+			"value": ""
+		},
+		"tomidatalake_link_DF_properties_typeProperties_url": {
+			"value": "https://tomidatalake.dfs.core.windows.net/"
+		}
+	}
+}
