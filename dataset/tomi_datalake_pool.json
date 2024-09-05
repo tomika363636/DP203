@@ -1,0 +1,12 @@
+{
+	"name": "tomi_datalake_pool",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "tomi_datapoolsyn_link_DF",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": []
+	}
+}

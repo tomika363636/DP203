@@ -1,0 +1,52 @@
+{
+	"name": "01-Pipeline-CSV-Pool",
+	"properties": {
+		"activities": [
+			{
+				"name": "01-Activity-CopyData",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "SqlDWSink",
+						"allowCopyCommand": true
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "tomidatalake_ActivityLog_CSV",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "tomi_datalake_pool",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
